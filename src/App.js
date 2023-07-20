@@ -1,11 +1,10 @@
-import './App.css'
-// import Header from './components/Header'
+import { useState } from "react";
 
 function App() {
-  let count = 0;
+  const [count,setcount] = useState(0)
 
- function addCount(){
-  count = count + 1 
+ const addCount = ()=>{
+  setcount(count+1)
   console.log(count);
  } 
 
