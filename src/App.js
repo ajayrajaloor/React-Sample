@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Counter from "./counter";
 
 function App() {
   const [count,setcount] = useState(0)
@@ -11,7 +12,8 @@ function App() {
   return (
     <div className='App'>
       <button onClick={addCount}>Add</button>
-        <h1>Counter: {count}</h1>
+      <Counter title="1st Counter" count = {count} />
+      <Counter title="2nd Counter" count = {count} />
     </div>
   );
 }
