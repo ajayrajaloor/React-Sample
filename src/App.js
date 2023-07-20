@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Counter from "./counter";
+import Employee from "./Employee";
 
 function App() {
   const [count,setcount] = useState(0)
@@ -9,17 +9,30 @@ function App() {
   console.log(count);
  } 
 
- let obj = {
-  title : "1st Counter",
-  count,
-  place:"hello"
- }
+let employee = [
+  {name:"Elon Musk",age:34},
+  {name:"Steve Jobs",age:35},
+  {name:"Ajay Raj", age:25}
+]
 
   return (
     <div className='App'>
       <button onClick={addCount}>Add</button>
-      <Counter title="1st Counter" {...obj} />
-      <Counter title="2nd Counter" count = {count} />
+     
+     {
+      employee.map((obj,index)=>{ //here while writing index it automatically gets/create the index
+        return (
+         
+         
+          // <Employee key={index} name= {obj.name} age= {obj.age} /> 
+          //here we need keys if more alike things are coming...it is to differentiate each other
+
+          //or we can write like even simple way
+          <Employee key={index} {...obj} /> 
+        )
+      })
+     }
+
     </div>
   );
 }
