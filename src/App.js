@@ -1,16 +1,18 @@
 import './App.css'
-import Header from './components/Header'
+// import Header from './components/Header'
 
 function App() {
-  const data = 'Project'
-  return (
-    <div>
-      <Header data= {data} />
+  let count = 0;
 
-      <Hello />
-      <Hello />
-      <Hello />
-      <p>This is Sample  {data} </p>
+ function addCount(){
+  count = count + 1 
+  console.log(count);
+ } 
+
+  return (
+    <div className='App'>
+      <button onClick={addCount}>Add</button>
+        <h1>Counter: {count}</h1>
     </div>
   );
 }
@@ -19,6 +21,3 @@ export default App;
 
 
 
-function Hello() {
-  return (<h1 className='hello' style={{ color: 'blue' }}>HELLO WORLD !!!</h1>)
-}
