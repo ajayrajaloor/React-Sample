@@ -1,43 +1,35 @@
+import React from "react";
 import { useState } from "react";
-import Employee from "./Employee";
+import Counter from "./counter";
 
 function App() {
-  const [count,setcount] = useState(0)
-
- const addCount = ()=>{
-  setcount(count+1)
-  console.log(count);
- } 
-
-let employee = [
-  {name:"Elon Musk",age:34},
-  {name:"Steve Jobs",age:35},
-  {name:"Ajay Raj", age:25}
-]
-
+const [state,setState] = useState(false)
   return (
-    <div className='App'>
-      <button onClick={addCount}>Add</button>
-     
-     {
-      employee.map((obj,index)=>{ //here while writing index it automatically gets/create the index
-        return (
-         
-         
-          // <Employee key={index} name= {obj.name} age= {obj.age} /> 
-          //here we need keys if more alike things are coming...it is to differentiate each other
+    <div className="App">
+      <h1 onClick={()=>setState(!state)} >Show/Hide</h1>
+      
+    
+      {state ? <Counter/> : null}  {/* if state is true Counter will work or not */}
+                
+                 {/* or we can write like ↓ */}
 
-          //or we can write like even simple way
-          <Employee key={index} {...obj} /> 
-        )
-      })
-     }
-
+                 {/* {state && <Counter/>}    it means that if state and counter is true only it will work */}
+    
     </div>
-  );
+  )
+   
 }
+
 
 export default App;
 
 
+
+
+
+//        USE EFFECT
+//              ↓
+// MOUNTING  : to load a new component
+// UPDATING  : to change the value inside the component
+//UNMOUNTING : if the component goes
 
