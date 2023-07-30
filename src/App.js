@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Counter from "./counter";
 
+
 function App() {
 const [state,setState] = useState(false)
   return (
@@ -9,7 +10,7 @@ const [state,setState] = useState(false)
       <h1 onClick={()=>setState(!state)} >Show/Hide</h1>
       
     
-      {state ? <Counter/> : null}  {/* if state is true Counter will work or not */}
+      {state ? <Counter/>  : null}  {/* if state is true Counter will work or not */}
                 
                  {/* or we can write like ↓ */}
 
