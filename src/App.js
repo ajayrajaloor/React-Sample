@@ -10,11 +10,12 @@ const [state,setState] = useState(false)
       <h1 onClick={()=>setState(!state)} >Show/Hide</h1>
       
     
-      {state ? <Counter/>  : null}  {/* if state is true Counter will work or not */}
+      {/* {state ? <Counter/>  : null}  if state is true Counter will work or not */}
                 
                  {/* or we can write like ↓ */}
 
-                 {/* {state && <Counter/>}    it means that if state and counter is true only it will work */}
+                 {state && <Counter/>}    
+                 {/* it means that if state and counter is true only it will work */}
     
     </div>
   )
