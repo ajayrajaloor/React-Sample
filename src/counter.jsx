@@ -1,24 +1,23 @@
 import React, {useState,useEffect} from 'react'
 
 
-// useEffect is used to get specific component if it is updated or in mounting inside the useEffect function... which is working while showing...
 function Counter() {
   const [count,setCount] = useState(0)
+  const [count2,setCount2] = useState(0)
   useEffect(()=>{
     console.log('mounting...');
-  console.log('updating'+count);
+  console.log('count1...'+count);
+  console.log('count2...'+count2);
 
-  return (() =>{
-  console.log('cleanup', count);
-  }) // the return will work first before the mounting and updation
-    // the codes which are write in the return statement inside the useEffect will work while the view is getting removed... 
-  },[count]) // if the dependency array is empty it is not affected to anything.it ,the hook, will be executed only once,
-  //if anything like,here count, is writes inside the dependency array it will affect it.
+  
+  },[count]) 
+// in this the useEffect will work only when any changes happen to the count only not work when there is any change in count 2...
   return (
     <div>
       <button onClick={() => setCount(count + 1)}>Increment</button>
         <h1>This is Component : {count}</h1>
-        <button onClick={() => setCount(count - 1)}>Decrement</button>
+      <button onClick={() => setCount2(count2 + 1)}>Increment</button>
+        <h1>This is Component : {count2}</h1>
     </div>
   )
 }
